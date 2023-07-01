@@ -1,15 +1,9 @@
 <template>
-  <combo />
+  <router-view />
 </template>
 
 <script>
-import combo from './components/combobox.vue';
 export default {
-  name: "app",
-  data() {
-    return {
-    }
-  },
-  components: { combo }
+  name: "app"
 }
 </script>
