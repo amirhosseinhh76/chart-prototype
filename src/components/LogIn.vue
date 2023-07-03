@@ -35,23 +35,39 @@ export default {
     },
     methods: {
         async login() {
+            try {
 
+                let res = await axios.get(
+                    `http://localhost:3000/user?name=${this.user}&pass=${this.pass}`
+                )
+                console.log("passed")
+                if (res.status == 200 && res.data.length > 0) {
+                    // console.warn(this.email, this.pass)
+                    localStorage.setItem("user-info", JSON.stringify(res.data[0].name));
+                    // console.log(res.data[0].name)
+                    this.$router.push({ name: "main" })
+                }
+                else {
+                    alert("User name or Password Invalid!")
+                }
+            }
+            catch (e) {
+                if (e.response) {
+                    // The request was made, but the server responded with a non-2xx status code
+                    alert(`Server returned an error: ${e.response.data}`);
+                } else if (e.request) {
+                    // The request was made, but no response was received
+                    alert("No response received from the server.");
+                } else {
+                    // Something happened in setting up the request that triggered an Error
+                    alert(`An error occurred: ${e.message}`);
+                }
+                return;
+            }
             // let res = await axios.get(
             //     `http://192.168.15.43:3000/user?name=${this.user}&pass=${this.pass}`
             // )
-            let res = await axios.get(
-                `http://localhost:3000/user?name=${this.user}&pass=${this.pass}`
-            )
-            // console.log(res.data)
-            if (res.status == 200 && res.data.length > 0) {
-                // console.warn(this.email, this.pass)
-                localStorage.setItem("user-info", JSON.stringify(res.data[0].name));
-                // console.log(res.data[0].name)
-                this.$router.push({ name: "main" })
-            }
-            else {
-                alert("User name or Password Invalid!")
-            }
+
         }
     },
     mounted() {
