@@ -6,7 +6,7 @@
 <script>
 
 export default {
-    name: 'test',
+    name: 'main',
     data() {
         return {
             mess: ''
@@ -14,9 +14,7 @@ export default {
     },
     mounted() {
         let dat = JSON.parse(localStorage.getItem('user-info'))
-        console.log(dat)
         this.mess = dat
     }
 }
-
 </script>
