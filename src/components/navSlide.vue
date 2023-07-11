@@ -6,9 +6,9 @@
             </div>
             <ul v-show='!mobile' class="navigation">
                 <li><router-link class="link" :to="{ name: main }">Main</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">About</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Contact</router-link></li>
-                <li><router-link class="link" :to="{ name: '' }">Resume</router-link></li>
+                <li><router-link class="link" :to="{ name: '' }">Object1</router-link></li>
+                <li><router-link class="link" :to="{ name: '' }">Object2</router-link></li>
+                <li><router-link class="link" :to="{ name: '' }">Object3</router-link></li>
             </ul>
 
             <div class="icon">
@@ -17,9 +17,9 @@
             <Transition name="mobile-nav">
                 <ul v-show='mobileNav' class="dropdown-nav">
                     <li><router-link class="link" :to="{ name: main }">Main</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">About</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Contact</router-link></li>
-                    <li><router-link class="link" :to="{ name: '' }">Resume</router-link></li>
+                    <li><router-link class="link" :to="{ name: '' }">Object1</router-link></li>
+                    <li><router-link class="link" :to="{ name: '' }">Object2</router-link></li>
+                    <li><router-link class="link" :to="{ name: '' }">Object3</router-link></li>
                 </ul>
             </Transition>
         </nav>
@@ -27,8 +27,8 @@
 </template>
   
 <script>
-
-export default {
+import { defineComponent } from 'vue';
+export default defineComponent({
     name: 'NavSlide',
     data() {
         return {
@@ -70,7 +70,7 @@ export default {
             return;
         }
     }
-}
+});
 
 </script>
 
@@ -82,6 +82,8 @@ header {
     position: fixed;
     transition: .5s ease all;
     color: white;
+    top: 0;
+    height: 80px;
 }
 
 header nav {
@@ -196,8 +198,14 @@ header nav .dropdown-nav li {
     margin-left: 0;
 }
 
+header nav .dropdown-nav li:hover {
+    background-color: rgba(50, 83, 67, 0.6);
+    transition: 0.3s ease all;
+}
+
 header nav .dropdown-nav li .link {
     color: black;
+
 }
 
 .scrolled-nav {

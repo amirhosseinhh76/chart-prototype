@@ -1,5 +1,4 @@
 <template>
-    <br><br><br><br>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, exercitationem a sequi veritatis non rerum sed
     adipisci, magnam mollitia quia quisquam suscipit nam amet qui itaque aspernatur id ex praesentium, reprehenderit illo
     illum laborum? Odio, officia, ad itaque doloribus aliquid enim consectetur dolorum quas voluptatem consequatur minus.
