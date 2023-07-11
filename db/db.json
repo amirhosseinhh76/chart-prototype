@@ -1,9 +1,14 @@
 {
-    "user":[
-        {
-            "name":"amirhosseinhh",
-            "pass":"oops6813",
-            "id":1
-        }
-    ]
+  "users": [
+    {
+      "name": "amirhosseinhh",
+      "pass": "oops6813",
+      "id": 1
+    },
+    {
+      "name": "admin",
+      "pass": "admin123",
+      "id": 2
+    }
+  ]
 }
